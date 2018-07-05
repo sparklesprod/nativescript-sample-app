@@ -1,0 +1,29 @@
+.action-bar
+{
+    margin-left: -10;
+    padding-right: 5;
+    height: 45;
+    color: white;
+    background-color: #CB1D00;
+}
+
+.action-bar Label
+{
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.exit-icon
+{
+    width: 25;
+    height: 25;
+}
+
+.label
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    background-color: rgba(0,0,0, 0.5);
+}

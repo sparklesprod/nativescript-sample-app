@@ -1,0 +1,58 @@
+.action-bar
+{
+    margin-left: -10;
+    padding-right: 5;
+    height: 45;
+    color: white;
+    background-color: #CB1D00;
+}
+
+.action-bar Label
+{
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.back-icon
+{
+    width: 18;
+    height: 18;
+    margin-right: 10;
+}
+
+.stadium-logo
+{
+    border-bottom-right-radius: 10;
+    border-bottom-left-radius: 10;
+}
+
+.stadium-desc
+{
+    margin: 10;
+    margin-top: -20;
+}
+
+.field
+{
+    padding: 10;
+    border-bottom-width: 1;
+    border-right-width: 1;
+    border-left-width: 1;
+    border-color: #e2e2e2;
+}
+
+.stadium-name
+{
+    font-weight: bold;
+    color: #fff;
+    background-color: #fc4242;
+    border-top-right-radius: 5;
+    border-top-left-radius: 5;
+    padding: 10;
+}
+
+.edit-stadium
+{
+    border-bottom-right-radius: 5;
+    border-bottom-left-radius: 5;
+}

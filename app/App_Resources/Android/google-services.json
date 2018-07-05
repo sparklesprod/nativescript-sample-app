@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "673331626604",
+    "firebase_url": "https://mobile-apps-ns.firebaseio.com",
+    "project_id": "mobile-apps-ns",
+    "storage_bucket": "mobile-apps-ns.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673331626604:android:9b08068b593f4e31",
+        "android_client_info": {
+          "package_name": "org.nativescript.angularapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673331626604-iouqapeqc4qgh0h144t666dgpd020otb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBwS7B8rLEUIGvlxhQ3SYdIaogAHpJlgA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="*">
+        <FlexboxLayout justifyContent="space-between" alignItems="center" width="100%">
+            <Label text="Главная страница"></Label>
+            <Image src="~/images/icon-exit.png" (tap)="logout()" class="exit-icon"></Image>
+        </FlexboxLayout>
+    </GridLayout>
+</ActionBar>
+
+<GridLayout columns="2*,*" rows="2*,3*" backgroundColor="white">
+    <GridLayout class="item">
+        <AbsoluteLayout row="0" col="0" [style.zIndex]="1">
+            <Label #label1
+                   translateY="-50"
+                   opacity="0"
+                   (loaded)="animateLabel(label1, 100)" text="Стадионы" height="30" width="100%" class="label"></Label>
+        </AbsoluteLayout>
+        <Image #img1
+               opacity="0"
+               scaleX="1.2"
+               scaleY="1.2"
+               (loaded)="animateImage(img1, 100)" [nsRouterLink]="['/stadiums']" src="~/images/stadium-2.jpg" row="0" col="0" stretch="aspectFill" marginBottom="6" padding="3" horizontalAlignment="center"></Image>
+    </GridLayout>
+    <!--<Label [nsRouterLink]="['/stadiums']" text="Стадионы" col="0" row="0" marginBottom="6" padding="3" backgroundColor="red"></Label>-->
+    <AbsoluteLayout row="0" col="1" rowSpan="2" marginLeft="6" [style.zIndex]="1">
+        <Label #label2
+               translateY="-50"
+               opacity="0"
+               (loaded)="animateLabel(label2, 125)" text="Игроки" height="30" width="100%" class="label"></Label>
+    </AbsoluteLayout>
+    <Image #img2
+           opacity="0"
+           scaleX="1.3"
+           scaleY="1.3"
+           (loaded)="animateImage(img2, 125)" [nsRouterLink]="['/players']" src="~/images/player.jpg" col="1" row="0" rowSpan="2" marginLeft="6" padding="3" stretch="aspectFill"></Image>
+    <!--<Label text="Игроки" col="1" row="0" marginLeft="6" padding="3" rowSpan="2" backgroundColor="green"></Label>-->
+    <AbsoluteLayout row="1" col="0" [style.zIndex]="1">
+        <Label #label3
+               translateY="-50"
+               opacity="0"
+               (loaded)="animateLabel(label3, 150)" text="Статистика" height="30" width="100%" class="label"></Label>
+    </AbsoluteLayout>
+    <Image #img3
+           opacity="0"
+           scaleX="1.4"
+           scaleY="1.4"
+           (loaded)="animateImage(img3, 150)" [nsRouterLink]="['/statistics']" src="~/images/stats.jpg" col="0" row="1" width="80%" height="80%" stretch="aspectFill"></Image>
+    <!--<Label text="Статистика" col="0" row="1" padding="3" backgroundColor="blue"></Label>-->
+</GridLayout>
+

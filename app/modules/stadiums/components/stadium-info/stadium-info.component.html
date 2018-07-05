@@ -1,0 +1,26 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="*">
+        <FlexboxLayout alignItems="center" width="100%">
+            <Image src="~/images/icon-back.png" (tap)="goBack()" class="back-icon"></Image>
+            <Label [text]="stadium ? stadium.name : 'Загрузка..'"></Label>
+        </FlexboxLayout>
+    </GridLayout>
+</ActionBar>
+
+<!--<ActivityIndicator [busy]="isLoading" width="50" height="50" [visibility]="isLoading ? 'visible' : 'collapse'"></ActivityIndicator>-->
+
+<StackLayout (loaded)="img ? animateStadiumLogo(img) : null">
+    <Image #img
+           opacity="0"
+           translateX="-25"
+           [src]="stadium.imagepath ? stadium.imagepath : '~/images/no-image.png' " class="stadium-logo"></Image>
+    <StackLayout #desc
+                 opacity="0.5"
+                 translateY="25"
+                 class="stadium-desc" *ngIf="showdesc" (loaded)="animateDesc(desc)">
+        <Label class="stadium-name" text="Стадион: {{stadium.name}}"></Label>
+        <Label class="field" text="Дата открытия: {{stadium.openingDate}}"></Label>
+        <Label class="field" text="Описание: {{stadium.desc}}"></Label>
+        <Label class="field edit-stadium" text="Редактировать" (tap)="edit()"></Label>
+    </StackLayout>
+</StackLayout>

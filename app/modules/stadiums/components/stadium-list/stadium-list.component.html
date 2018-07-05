@@ -1,0 +1,67 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="*">
+        <FlexboxLayout alignItems="center" width="100%">
+            <Image src="~/images/icon-back.png" (tap)="goBack()" class="back_icon"></Image>
+            <Label text="Стадионы"></Label>
+        </FlexboxLayout>
+    </GridLayout>
+</ActionBar>
+
+<ActivityIndicator [busy]="isLoading" width="50" height="50" [visibility]="isLoading ? 'visible' : 'hidden'"></ActivityIndicator>
+
+<!--<GridLayout>-->
+    <!--<RadListView pullToRefresh="true"-->
+                 <!--(pullToRefreshInitiated)="onPullToRefreshInitiated($event)"-->
+                 <!--swipeActions="true"-->
+                 <!--(itemSwipeProgressEnded)="onSwipeCellFinished($event)"-->
+                 <!--(itemSwipeProgressStarted)="onSwipeCellStarted($event)"-->
+                 <!--(itemSwipeProgressChanged)="onCellSwiping($event)"-->
+                 <!--selectionBehavior="Press"-->
+                 <!--[items]="stadiumList">-->
+        <!--<ng-template tkListItemTemplate let-item="item">-->
+            <!--<GridLayout (tap)="selectedItem(item)">-->
+                <!--<Label [text]="item.name" class="row"></Label>-->
+            <!--</GridLayout>-->
+        <!--</ng-template>-->
+        <!--<GridLayout *tkListItemSwipeTemplate columns="auto, *, auto" class="gridLayoutLayout">-->
+            <!--<StackLayout id="mark-view" col="0" class="markViewStackLayout" (tap)="onLeftSwipeClick($event)">-->
+                <!--<Label text="mark" class="swipetemplateLabel" verticalAlignment="center" horizontalAlignment="center"></Label>-->
+            <!--</StackLayout>-->
+            <!--<StackLayout id="delete-view" col="2" class="deleteViewStackLayout" (tap)="onRightSwipeClick($event)">-->
+                <!--<Label text="delete" class="swipetemplateLabel" verticalAlignment="center" horizontalAlignment="center"></Label>-->
+            <!--</StackLayout>-->
+        <!--</GridLayout>-->
+    <!--</RadListView>-->
+    <!--&lt;!&ndash;Тест отображения фото&ndash;&gt;-->
+    <!--&lt;!&ndash;<Image [src]="image" stretch="fill" width="100" height="100" borderRadius="100"></Image>&ndash;&gt;-->
+<!--</GridLayout>-->
+
+<GridLayout *ngIf="allDataLoaded" rows="auto, *">
+
+    <GridLayout row="0" class="add">
+        <Image width="25" height="25" (tap)="add()" src="~/images/add.png"></Image>
+    </GridLayout>
+
+    <RadListView row="1" [items]="stadiumList"
+                 swipeActions="true"
+                 (itemTap)="onSelectedItem($event)"
+                 (itemSwipeProgressStarted)="onSwipeCellStarted($event)">
+        <ng-template let-item="item">
+            <Label [text]="item.name" class="row"></Label>
+        </ng-template>
+
+        <GridLayout *tkListItemSwipeTemplate columns="*, auto">
+            <StackLayout id="delete-view" col="1" (tap)="delete($event)" class="delete-view">
+                <Image src="~/images/delete.png"></Image>
+            </StackLayout>
+        </GridLayout>
+    </RadListView>
+</GridLayout>
+
+<!--<StackLayout>-->
+    <!--<ListView [items]="stadiumList">-->
+        <!--<ng-template  let-item="item">-->
+            <!--<Label class="row" (tap)="selectedItem(item.id)" [text]="item.name"></Label>-->
+        <!--</ng-template>-->
+    <!--</ListView>-->
+<!--</StackLayout>-->

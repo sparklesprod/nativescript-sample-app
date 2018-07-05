@@ -1,0 +1,20 @@
+<!--<ActionBar title="Редактирование"></ActionBar>-->
+
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="*">
+        <FlexboxLayout alignItems="center" width="100%">
+            <Image src="~/images/icon-back.png" (tap)="goBack()" class="back_icon"></Image>
+            <Label text="Редактирование"></Label>
+        </FlexboxLayout>
+    </GridLayout>
+</ActionBar>
+
+<StackLayout *ngIf="stadium">
+    <TextField hint="Название"
+               autocorrect="false" autocapitalizationType="none" [(ngModel)]="stadium.name"></TextField>
+    <TextField hint="Фото" secure="false" [(ngModel)]="stadium.imagepath"></TextField>
+    <!--<DatePicker [date]="stadium.openingDate"></DatePicker>-->
+    <TextField hint="Описание стадиона" [(ngModel)]="stadium.desc"></TextField>
+
+    <Button text="Сохранить" (tap)="submit()" class="submit-button"></Button>
+</StackLayout>

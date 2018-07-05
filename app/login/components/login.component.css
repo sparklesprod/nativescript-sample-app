@@ -1,0 +1,62 @@
+.background
+{
+    background-image: url("~/images/main-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.logo
+{
+    background-image: url("~/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+StackLayout {
+    margin-left: 30;
+    margin-right: 30;
+    background-color: rgba(255, 255, 255, 0.29);
+}
+Image {
+    margin-top: 5;
+    margin-bottom: 20;
+}
+Button, TextField {
+    margin-left: 16;
+    margin-right: 16;
+    margin-bottom: 10;
+}
+
+.tfstyle
+{
+    transform: scale(0.9, 0.9);
+    font-size: 13;
+    /*border-bottom-width: 2;*/
+    /*border-color: #CB1D00;*/
+    border-width: 1;
+    border-color: #e0e0e0;
+    border-radius: 28;
+    padding: 10;
+}
+
+.submit-button {
+    background-color: #CB1D00;
+    color: white;
+    margin-top: 10;
+    margin-bottom: -5;
+}
+
+.submit-button:pressed {
+    background-color: #da1d00;
+}
+
+.btn
+{
+    color: black;
+    background-color: white;
+    border-width: 1;
+    border-color: #CB1D00;
+    height: 40;
+    padding: 5;
+}

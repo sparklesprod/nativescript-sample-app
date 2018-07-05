@@ -1,0 +1,24 @@
+<GridLayout>
+
+    <GridLayout #background
+                scaleX="1.4"
+                scaleY="1.4"
+                class="background"
+                (loaded)="startBackgroundAnimation(background)">
+    </GridLayout>
+
+    <StackLayout>
+        <Image class="logo" src="~/images/logo.png" stretch="none" horizontalAlignment="center"></Image>
+        <TextField id="email" required #email="ngModel" class="tfstyle" hint="Email" keyboardType="email"
+                   autocorrect="false" autocapitalizationType="none" (focus)="onFocus($event)" (blur)="onBlur($event)" [(ngModel)]="user.email"></TextField>
+        <!--<Label [visibility]="email.valid ? 'visible' : 'hidden'" text="Поле не валидно"></Label>-->
+        <TextField id="password" class="tfstyle" hint="Пароль" secure="true" (focus)="onFocus($event)" (blur)="onBlur($event)" [(ngModel)]="user.password"></TextField>
+
+        <Button scaleX="0.9"
+                scaleY="0.9"
+                [text]="isLoggingIn ? 'Войти' : 'Зарегистрироваться'" (tap)="submit()" class="submit-button"></Button>
+        <Button scaleX="0.8"
+                scaleY="0.8"
+                [text]="isLoggingIn ? 'Регистрация' : 'Назад к форме Входа'" (tap)="toggleDisplay()" class="btn"></Button>
+    </StackLayout>
+</GridLayout>
