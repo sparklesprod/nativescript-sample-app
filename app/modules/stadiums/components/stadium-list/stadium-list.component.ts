@@ -31,11 +31,13 @@ export class StadiumListComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("КОМПОНЕНТ STADUIM-LIST");
+        console.log("STADUIM-LIST COMPONENT");
         this.firebaseService.getItemsList('stadiums').subscribe((stadiumList: Stadium[]) => {
-            this.stadiumList = stadiumList;
-            this.isLoading = false;
-            this.allDataLoaded = true;
+            setTimeout(() => {
+                this.stadiumList = stadiumList;
+                this.isLoading = false;
+                this.allDataLoaded = true;
+            }, 2000);
             // console.log("Загружен лист стадионов: ", this.stadiumList);
         })
         // console.log("CAMERA", camera.requestPermissions());
@@ -59,7 +61,7 @@ export class StadiumListComponent implements OnInit {
     }
 
     public selectedItem(id) {
-        console.log("Выбранный стадион: ", id);
+        console.log("selected stadium id: ", id);
         this.routerExtensions.navigate(['/stadiums', id], { clearHistory: true });
     }
 
@@ -97,7 +99,7 @@ export class StadiumListComponent implements OnInit {
 
     onSelectedItem(args: ListViewEventData) {
         let stadium = <Stadium>(args.object.items[args.index]);
-        console.log("Клик по стадиону: ", stadium);
+        console.log("Click on Stadium: ", stadium);
         this.routerExtensions.navigate(["/stadiums", stadium.id]);
     }
 

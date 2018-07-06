@@ -28,7 +28,7 @@ export class StadiumInfoEditComponent implements OnInit {
             this.stadium_id = params['id'];
             console.log(this.stadium_id);
             if (this.stadium_id !== "0") {
-                console.log("Попали сюда?");
+                console.log("we here?");
                 setTimeout(() => {
                     this.firebaseService.getItem(this.stadium_id).subscribe((stadium) => {
                         this.stadium = stadium;
@@ -43,8 +43,8 @@ export class StadiumInfoEditComponent implements OnInit {
     }
 
     submit() {
-        console.log('Новые данные', this.stadium);
-        console.log('Сделать метод обновления');
+        console.log('New data', this.stadium);
+        console.log("create 'update()' method");
         if (this.stadium_id === '0') {
             this.stadiumService.addStadium('stadiums', this.stadium).then(() => {
                 this.routerExtensions.navigate(['/stadiums']);
@@ -57,7 +57,11 @@ export class StadiumInfoEditComponent implements OnInit {
     }
 
     goBack() {
-        this.routerExtensions.navigate(['/stadiums', this.stadium_id]);
+        if (this.stadium_id !== "0") {
+            this.routerExtensions.navigate(['/stadiums', this.stadium_id]);
+        } else {
+            this.routerExtensions.navigate(['/stadiums']);
+        }
     }
 
 }

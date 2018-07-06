@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("Компонент LOGIN");
+        console.log("LOGIN COMPONENT");
         this.page.actionBarHidden = true;
     }
 

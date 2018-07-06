@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         // отмена нажания системной кнопки Back
         application.android.on(application.AndroidApplication.activityBackPressedEvent, (args) => {
-            console.log("Нажата кнопка back");
+            console.log("click native button 'back'");
             args['cancel'] = true;
         });
         // end
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
                     this.backendService.token = data.user.uid;
                 }
                 else {
-                    console.log("Пользователь не авторизован");
+                    console.log("user is not authorized");
                     this.backendService.token = "";
                 }
             }

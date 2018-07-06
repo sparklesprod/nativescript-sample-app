@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("Произошел редирект на LIST COMPONENT");
+        console.log("this redirect on LIST COMPONENT");
     }
 
     logout() {
@@ -42,5 +42,13 @@ export class ListComponent implements OnInit {
             duration: 800,
             delay: delay,
         });
+    }
+
+    itemTap(args, path: string) {
+        const obj = args.object;
+        const className = obj.className.replace('-animated', '');
+        obj.className = className;
+        obj.className = className + '-animated';
+        this.router.navigate([path]);
     }
 }

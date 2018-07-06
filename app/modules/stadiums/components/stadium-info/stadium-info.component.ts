@@ -26,7 +26,7 @@ export class StadiumInfoComponent implements OnInit {
             this.stadium_id = params['id'];
             this.firebaseService.getItem(this.stadium_id).subscribe((stadium) => {
                 this.stadium = stadium;
-                console.log("Какой это объект стадиона", this.stadium);
+                console.log("Current stadium object", this.stadium);
             })
         });
     }
@@ -36,7 +36,7 @@ export class StadiumInfoComponent implements OnInit {
     }
 
     public edit() {
-        console.log("Переход к странице редактирования");
+        console.log("redirect to edit-page");
         this.routerExtensions.navigate(['/stadiums', this.stadium_id, 'edit']);
     }
 

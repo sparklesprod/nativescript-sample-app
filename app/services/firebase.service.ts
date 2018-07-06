@@ -94,7 +94,7 @@ export class FirebaseService {
     }
 
     getItemsList(path) {
-        console.log("Проверка вызова метода. Путь === ", path);
+        console.log("check call method. Path === ", path);
         return new Observable((observer: any) => {
             let _path = path;
 
