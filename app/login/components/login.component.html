@@ -1,4 +1,4 @@
-<GridLayout>
+<GridLayout (tap)="outsideTap()">
 
     <GridLayout #background
                 scaleX="1.4"
@@ -22,3 +22,5 @@
                 [text]="isLoggingIn ? 'Регистрация' : 'Назад к форме Входа'" (tap)="toggleDisplay()" class="btn"></Button>
     </StackLayout>
 </GridLayout>
+
+<TextField height="0" id="dummy"></TextField>

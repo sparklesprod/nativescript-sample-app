@@ -86,4 +86,11 @@ export class LoginComponent implements OnInit {
             scale: {x: 0.9, y: 0.9}
         })
     }
+
+    outsideTap() {
+        // первый вариант удалить фокус с textfield
+        const emptyField = <TextField>this.page.getViewById('dummy');
+        emptyField.focus();
+        emptyField.dismissSoftInput();
+    }
 }
