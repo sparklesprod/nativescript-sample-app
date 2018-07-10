@@ -7,6 +7,30 @@
     </GridLayout>
 </ActionBar>
 
-<StackLayout>
-    <Label text="Coming soon..."></Label>
-</StackLayout>
+<!--<StackLayout>-->
+    <!--<Label text="Coming soon..."></Label>-->
+<!--</StackLayout>-->
+
+<TabView selectedIndex="0" androidTabPosition="bottom" androidSelectedTabHighlightColor="#CB1D00" selectedTabTextColor="#CB1D00">
+    <StackLayout *tabItem="{title: 'Все'}">
+        <SearchBar hing="Поиск" (textChange)="onTextChange($event)"></SearchBar>
+        <ScrollView>
+            <ListView [items]="players" height="100%" separatorColor="transparent" (loadMoreItems)="onLoadMore($event)">
+                <ng-template let-item="item">
+                    <StackLayout>
+                        <GridLayout columns="auto, *" rows="auto, auto" class="info">
+                            <Image row="0" rowSpan="2" col="0" [src]="item.photo" class="photo"></Image>
+                            <StackLayout row="0" col="1">
+                                <Label [text]="item.name"></Label>
+                                <Label [text]="item.country"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </ScrollView>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Избранные'}">
+        <!--some code-->
+    </StackLayout>
+</TabView>

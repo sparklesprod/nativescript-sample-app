@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import firebase = require("nativescript-plugin-firebase");
+import * as firebase from "nativescript-plugin-firebase";
 import {BackendService} from "~/services/backend.service";
 import * as application from "tns-core-modules/application";
 import * as connectivityModule from "tns-core-modules/connectivity";

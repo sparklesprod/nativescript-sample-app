@@ -1,6 +1,6 @@
 import {Injectable, NgZone } from "@angular/core";
 import {BackendService} from "~/services/backend.service";
-import firebase = require('nativescript-plugin-firebase');
+import * as firebase from 'nativescript-plugin-firebase';
 import {Observable, BehaviorSubject} from "rxjs";
 import {User} from "~/models/user";
 import {Stadium} from "~/modules/stadiums/classes/stadium";

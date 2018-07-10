@@ -7,7 +7,9 @@
                 (loaded)="startBackgroundAnimation(background)">
     </GridLayout>
 
-    <StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#CB1D00" width="50" height="50" [visibility]="isLoading ? 'visible' : 'hidden'"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading">
         <Image class="logo" src="~/images/logo.png" stretch="none" horizontalAlignment="center"></Image>
         <TextField id="email" required #email="ngModel" class="tfstyle" hint="Email" keyboardType="email"
                    autocorrect="false" autocapitalizationType="none" (focus)="onFocus($event)" (blur)="onBlur($event)" [(ngModel)]="user.email"></TextField>

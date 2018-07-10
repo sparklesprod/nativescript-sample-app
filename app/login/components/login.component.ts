@@ -15,6 +15,7 @@ import {AnimationCurve} from "tns-core-modules/ui/enums";
 export class LoginComponent implements OnInit {
 
     public user: User;
+    public isLoading = false;
     public isLoggingIn = true;
     public isAuthenticating = false;
 
@@ -38,12 +39,16 @@ export class LoginComponent implements OnInit {
     }
 
     private login() {
-        this.firebaseService.login(this.user).then(() => {
-            this.isAuthenticating = false;
-            this.routerExtensions.navigate(['/'], {clearHistory: true});
-        }).catch((msg) => {
-            this.isAuthenticating = false;
-        })
+        this.isLoading = true;
+        this.firebaseService.login(this.user)
+            .then(() => {
+                this.isAuthenticating = false;
+                this.routerExtensions.navigate(['/'], {clearHistory: true});
+                this.isLoading = false;
+            })
+            .catch((msg) => {
+                this.isAuthenticating = false;
+            })
     }
 
     private signUp() {
